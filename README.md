@@ -58,11 +58,11 @@ Screenshots
 
 # Sign Up / Login
 
-![Alt text](https://github.com/mohitsinghnegi1/game-of-dice---multiplayer-game/blob/master/game_images/login_signup.png'Singup/login')
+![Singup/login](game_images/login_signup.png'Singup/login')
 # dashboard
-![Alt text](https://github.com/mohitsinghnegi1/game-of-dice---multiplayer-game/blob/master/game_images/dashboard.png'Dashboard')
+![Dashboard](game_images/dashboard.png'Dashboard')
 # lobby
-![Alt text](https://github.com/mohitsinghnegi1/game-of-dice---multiplayer-game/blob/master/game_images/lobby.png'Lobby')
+![Lobby](game_images/lobby.png'Lobby')
 
 # game scene
-![Alt text](https://github.com/mohitsinghnegi1/game-of-dice---multiplayer-game/blob/master/game_images/game_scene.png'Game scene')
+![Game scene](game_images/game_scene.png'Game scene')

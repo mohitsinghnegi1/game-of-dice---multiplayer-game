@@ -58,11 +58,11 @@ Screenshots
 
 # Sign Up / Login
 
-![Singup/login](game_images/login_signup.png'Singup/login')
+![Singup/login](game_images/login_signup.png)
 # dashboard
-![Dashboard](game_images/dashboard.png'Dashboard')
+![Dashboard](game_images/dashboard.png)
 # lobby
-![Lobby](game_images/lobby.png'Lobby')
+![Lobby](game_images/lobby.png)
 
 # game scene
-![Game scene](game_images/game_scene.png'Game scene')
+![Game scene](game_images/game_scene.png)

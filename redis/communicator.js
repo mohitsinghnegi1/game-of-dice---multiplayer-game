@@ -124,9 +124,9 @@ class Communication {
                     userService.updateGameStats(userObj);
                 });
 
-                // oGame.getGameData((gameData) => {
-                //     this.io.to(oGame.oGameID).emit("lobbyupdated", gameData.players);
-                // });
+                oGame.getGameData((gameData) => {
+                    this.io.to(oGame.oGameID).emit("lobbyupdated", gameData.players);
+                });
 
             });
 

@@ -81,6 +81,53 @@ class Communication {
                     userService.updateGameStats(userObj);
                 });
 
+
+            });
+
+            socket.on('quickplay', (data) => {
+                console.log('quick play ', data);
+                // find existing game which is public
+                var oGame = this.findAPublicGame();
+                console.log(oGame, "Game ID public");
+
+                if (oGame == null) {
+                    oGame = new Game(this.redisClient, true);
+                    var gameID = shortid.generate();
+                    oGame.createGame(gameID);
+                    this.aGames.push({
+                        id: gameID,
+                        instance: oGame
+                    });
+                }
+
+                var myID = shortid.generate();
+                data.id = myID;
+                data.currentScore = 0;
+                data.turn = "";
+                console.log(oGame, "public oGame");
+                console.log("-", oGame.oGameID, "oGame.oGameID");
+                socket.join(oGame.oGameID);
+                //  add player to game data
+                oGame.addPlayer(data);
+
+
+                oGame.getGameData((gameData) => {
+                    socket.emit('joinroom', {'gamedata': gameData, 'all': data, 'inroom': oGame.oGameID, 'myID': myID, 'isAdmin': true});
+                    socket.to(oGame.id).emit('playerjoined', data);
+
+                    let userObj = {
+                        _id: data._id,
+                        gameId: oGame.oGameID,
+                        gameState: "lobby",
+                        userUniqueId: data.id
+                    };
+                    userService.updateGameStats(userObj);
+                });
+
+                // oGame.getGameData((gameData) => {
+                //     this.io.to(oGame.oGameID).emit("lobbyupdated", gameData.players);
+                // });
+
             });
 
             socket.on('joingame', (data) => {
@@ -193,6 +240,16 @@ class Communication {
         console.log(this.aGames, gameID, "From FInd");
         for (var i = 0; i < this.aGames.length; i++) {
             if (this.aGames[i].id == gameID) {
+                return this.aGames[i].instance;
+            }
+        }
+        return null;
+    }
+
+    findAPublicGame() {
+
+        for (var i = 0; i < this.aGames.length; i++) {
+            if (this.aGames[i].instance.isThisPublicGame() && this.aGames[i].instance.getPlayerCount() < 4) {
                 return this.aGames[i].instance;
             }
         }

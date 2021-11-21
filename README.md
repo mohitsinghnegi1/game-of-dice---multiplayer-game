@@ -27,7 +27,7 @@ backend side and pass to the next player turn. ○ When players roll dice increa
 
 **Requirements:**
 * NodeJS 12.18.3
-* Redis (Localhost:6379)
+* Redis (Localhost:6379) - For mac install redis using `brew install redis`
 * MongoDB (I am using my Atlas cluster)
 
 **To Run the Application:**

@@ -1,0 +1,7 @@
+{
+    "connectionString": "mongodb+srv://mohit_11615192:M@n-1dra@cluster0.pny4g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "secret": "CODEWITHMICKEY",
+    "redishost":"localhost",
+    "redishostprod":"redis.codewithmickey.com",
+    "redisport":6379
+}

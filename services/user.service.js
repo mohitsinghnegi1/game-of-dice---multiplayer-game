@@ -22,14 +22,6 @@ async function authenticate1({userName}) {
     } else if (user) {
         const {hash, ...userWithoutHash} = user.toObject();
         const token = jwt.sign({sub: user.id}, config.secret);
-        // var resFromRedis;
-        // if(user.gameId){
-        //     oModel.redisClient.getAsync(user.gameId).then(function(data) {
-        //         console.log("eeee",data);
-        //     }).catch(function(e) {
-        //         console.error(e.stack);
-        //     });
-        // }
 
         return {
             ...userWithoutHash,

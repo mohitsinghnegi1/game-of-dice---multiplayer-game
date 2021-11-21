@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <script src='js/jquery.min.js'></script>
+    <script src="js/socket.io.js"></script>
+    <script src="js/gameroom.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/lobby.js"></script>
+    <script src="js/frontendlogic.js"></script>
+    <script src="js/register.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+</head>
+
+<body style="background-image: url('./images/background.jpeg');background-size:cover">
+    <div class="container" style="padding: 22px;">
+        <div class="jumbotron" style="background-image: url('./images/board.png');background-size:contain;width:100%;height:400px;background-repeat: no-repeat;background-position: center;">
+            <h1 style="text-align:center;font-size: 30px;margin-top:60px">Game Of Dice <br/> Multiplayer Game</h1>
+            <button class="btn btn-success btn-lg" id="logoutBtn" type="button">Logout</button>
+            <button class="btn btn-success btn-lg" style="display: none;" id="leaveGameBtn" type="button">Leave Game</button>
+        </div>
+        <div id="loginFormContainer" class="row justify-content-center pl-5 pr-5">
+            <div class="col-sm-5 ">
+                <h2 style="color:rgb(120, 230, 69)">Login to Play Dice</h2>
+                <form id="loginForm" class="needs-validation" novalidate>
+                    <div class="form-row">
+                        <div class="col-md-10 mb-3">
+                            <label for="emailId">Email:</label>
+                            <input id="emailId" type="email" class="form-control" placeholder="Email" value="" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Looks incorrect.
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-success btn-lg" id="loginBtn" type="button">Login</button>
+                    <button class="btn btn-success btn-lg" id="registerBtn" type="button">Register</button>
+                </form>
+                
+            </div>
+        </div>
+        <!-- <div id="login" style="display: none;">
+            <label for="name"> Email:</label>
+            <input type="email" id="name" class="form-control" placeholder="Email address" required=""
+                autofocus="">
+            <a href="#"><button class="btn btn-success btn-lg">Login</button></a>
+        </div> -->
+        <div class="row justify-content-center">
+
+            <div id="start" class="col-sm-7" style="display: none;">
+                <div class="row justify-content-center">
+                    <div class="m-2">
+                        <span id="creategame"> <button class="btn btn-success btn-lg mt-2">Create Room</button> </span>
+                    </div>
+                    <div class="m-2">
+                        <span id="joinroom"> <button class="btn btn-success btn-lg mt-2">Join Room</button></span>
+                    </div>
+                    <div class="m-2">
+                        <span id="quickplay"> <button class="btn btn-success btn-lg mt-2">Quick Play</button></span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="joinroomcontrols" class="col-sm-6 " style="display: none;">
+                <div class="row justify-content-center">
+                    <div class="col-sm-9 ">
+                        <label for="roomid">Room:</label>
+                        <input id="roomid" class="form-control" placeholder="Enter Room name" required="" autofocus="">
+                        <a href="#" id="joinbutton"><button class="btn btn-success btn-lg mt-3">Join</button></a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+
+
+            <div id="lobby" class="col-sm-12">
+
+            </div>
+            <div id="gameroom" class="col-sm-12" style="display: none;">
+                <label>Timer: </label><div id="playertimer">00:00</div><div class="rolldice mt-4"><a href="#" id="rollbutton"><Button class="btn-success btn-lg">Roll Dice</Button></a></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

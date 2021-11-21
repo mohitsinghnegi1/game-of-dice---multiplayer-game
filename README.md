@@ -54,3 +54,15 @@ backend side and pass to the next player turn. ○ When players roll dice increa
 * Code could be more modular
 
 
+Screenshots 
+
+# Sign Up / Login
+
+![Alt text](https://github.com/mohitsinghnegi1/game-of-dice---multiplayer-game/blob/master/game_images/login_signup.png'Singup/login')
+# dashboard
+![Alt text](https://github.com/mohitsinghnegi1/game-of-dice---multiplayer-game/blob/master/game_images/dashboard.png'Dashboard')
+# lobby
+![Alt text](https://github.com/mohitsinghnegi1/game-of-dice---multiplayer-game/blob/master/game_images/lobby.png'Lobby')
+
+# game scene
+![Alt text](https://github.com/mohitsinghnegi1/game-of-dice---multiplayer-game/blob/master/game_images/game_scene.png'Game scene')

@@ -36,9 +36,9 @@ backend side and pass to the next player turn. ○ When players roll dice increa
 
 **Flow of the Application:**
 * Run the application => use `npm run dev` to start server
-* Open `http://localhost:8081`
+* Open `http://localhost:8081` in you browser
 * Register few users or use existing dummy users (dummy1@gmail.com, dummy2@gmail.com, dummy3@gmail.com)
-* Login using (dummy1@gmail.com, dummy2@gmail.com, dummy3@gmail.com)
+* Login using (dummy1@gmail.com, dummy2@gmail.com, dummy3@gmail.com) or registered user in incognito mode or in different tabs (may create some problem)
 * After login you will reach the game home screen. You will have 3 options here, "create room" or "join a game" or "quick play" to play with random players
 * Once you click the Create Room button, you will get into the game lobby. Here you will also get a room ID which you can share with other players to join.
 * The lobby will get updated if any other players join in your room.
